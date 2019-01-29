@@ -1,20 +1,24 @@
-from airtravel import make_flight
+from airtravel import *
 from pprint import pprint
 
 print("Progettino di esercizio con Python!")
 
-f = make_flight()
+volo1, volo2 = make_flights()
 
-print(f)
+print(volo1)
 
-print(f.number())
+print(volo1.number())
 
-print(f.aircraft_model())
+print(volo1.aircraft_model())
 
-pprint(f._seating)
+pprint(volo1._seating)
 
-f.relocate_passenger("4B", "13B")
+volo1.relocate_passenger("4B", "13B")
 
-pprint(f._seating)
+print("Dopo spostamento di un passeggero:")
 
-print("Sono rimasti disponibili {} posti".format(f.num_available_seats()))
+pprint(volo1._seating)
+
+print("Sono rimasti disponibili {} posti".format(volo1.num_available_seats()))
+
+volo1.make_boarding_cards(console_card_printer)
