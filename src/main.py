@@ -1,24 +1,32 @@
 from airtravel import *
 from pprint import pprint
+from calculus.linesandpoints import *
 
-print("Progettino di esercizio con Python!")
+scelta = input("Scegli che esercizino lanciare!\n\n1) Modello per voli aerei\n2) Calcolo della distanza fra retta e "
+               "punto\nScelta: ")
 
-volo1, volo2 = make_flights()
+if scelta == "1":
+    print("\nProgettino di esercizio con Python!")
 
-print(volo1)
+    volo1, volo2 = make_flights()
 
-print(volo1.number())
+    print(volo1)
 
-print(volo1.aircraft_model())
+    print(volo1.number())
 
-pprint(volo1._seating)
+    print(volo1.aircraft_model())
 
-volo1.relocate_passenger("4B", "13B")
+    pprint(volo1._seating)
 
-print("Dopo spostamento di un passeggero:")
+    volo1.relocate_passenger("4B", "13B")
 
-pprint(volo1._seating)
+    print("Dopo spostamento di un passeggero:")
 
-print("Sono rimasti disponibili {} posti".format(volo1.num_available_seats()))
+    pprint(volo1._seating)
 
-volo1.make_boarding_cards(console_card_printer)
+    print("Sono rimasti disponibili {} posti".format(volo1.num_available_seats()))
+
+    volo1.make_boarding_cards(console_card_printer)
+else:
+    result = linesandpoints()
+    result.distancepointfromline()
